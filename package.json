@@ -1,5 +1,5 @@
 {
-    "name": "funky",
+    "name": "@13ms/funky",
     "version": "0.0.1",
     "description": "A jsdoc plugin for quickly creating scoped and access tagged functions",
     "type": "module",
@@ -26,7 +26,9 @@
     "homepage": "https://github.com/blameitonyourisp/funky#readme",
     "devDependencies": {
         "@babel/plugin-transform-modules-commonjs": "^7.21.2",
+        "@jest/globals": "^29.5.0",
         "@rollup/plugin-terser": "^0.4.0",
+        "docdash": "^2.0.1",
         "jest": "^29.5.0",
         "rollup": "^3.20.2"
     },

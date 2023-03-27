@@ -3,8 +3,7 @@
         "search": true,
         "typedefs": true,
         "collapse": true,
-        "sort": true,
-        "scripts": ["../src/index.js", "../src/styles.css"]
+        "sort": true
     },
     "opts": {
         "destination": "./jsdoc/",
@@ -14,14 +13,10 @@
         "sort": true
     },
     "plugins": [ 
-        "plugins/markdown",
-        "../../src/plugin/index.js"
+        "plugins/markdown"
     ],
     "markdown": {
         "hardwrap": true
-    },
-    "submodule": {
-        
     },
     "recurseDepth": 10,
     "source": {
