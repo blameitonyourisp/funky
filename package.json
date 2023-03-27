@@ -1,0 +1,36 @@
+{
+    "name": "funky",
+    "version": "0.0.1",
+    "description": "A jsdoc plugin for quickly creating scoped and access tagged functions",
+    "type": "commonjs",
+    "main": "dist/bundle.min.cjs",
+    "scripts": {
+        "test": "jest",
+        "build": "rollup --config ./config/rollup.config.js",
+        "docs": "jsdoc -c ./config/jsdoc.config.json",
+        "docs-sample": "jsdoc -c ./config/jsdoc-sample.config.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/blameitonyourisp/funky.git"
+    },
+    "keywords": [
+        "jsdoc",
+        "plugin"
+    ],
+    "author": "James Reid",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/blameitonyourisp/funky/issues"
+    },
+    "homepage": "https://github.com/blameitonyourisp/funky#readme",
+    "devDependencies": {
+        "@rollup/plugin-node-resolve": "^15.0.1",
+        "@rollup/plugin-terser": "^0.4.0",
+        "jest": "^29.5.0",
+        "rollup": "^3.20.2"
+    },
+    "dependencies": {
+        "jsdoc": "^4.0.2"
+    }
+}
