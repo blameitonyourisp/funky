@@ -1,1 +1,1 @@
-"use strict";console.log("Hello World!");
+"use strict";const e=["public","package","protected","private"],a=["global","instance","static","inner"],n=(n,s)=>{let[c,t]=s?.value?.type?.names||[];return c=e.includes(c)?c:e[0],t=a.includes(t)?t:a[1],Object.assign(n,{kind:"function",access:c,scope:t})};exports.defineTags=e=>{const a={canHaveType:!0,canHaveName:!1,isNamespace:!1,mustHaveValue:!0,mustNotHaveDescription:!0,mustNotHaveValue:!1};e.defineTag("funky",{...a,onTagged:n}),e.defineTag("scopedfunction",{...a,onTagged:n}),e.defineTag("scopedfunc",{...a,onTagged:n})};
