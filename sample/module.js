@@ -22,9 +22,10 @@ const moduleFuncB = () => {}
 
 /**
  * This function has "protected" access and "inner" scope with an overloaded
- * type string, defined with a funky tag inside a module tagged file.
+ * type string, defined with a funky tag in mixed case inside a module tagged 
+ * file.
  * 
- * @funky {protected|inner|overloaded}
+ * @funky {PROTECTED|InnEr|overloaded}
  */
 const moduleFuncC = () => {}
 

@@ -18,26 +18,31 @@
 
 // @body
 /** 
- * Array of available access types, see 
- * {@link https://jsdoc.app/tags-access.html here} for more information
+ * Regex matching allowable access types with case insensitive flag, see 
+ * {@link https://jsdoc.app/tags-access.html here} for more information, and the
+ * following links for more information on individual scopes:
+ *      - {@link https://jsdoc.app/tags-public.html public}
+ *      - {@link https://jsdoc.app/tags-package.html package}
+ *      - {@link https://jsdoc.app/tags-protected.html protected}
+ *      - {@link https://jsdoc.app/tags-private.html private}
  * 
  * @global
- * @type {string[]}
+ * @type {RegExp}
  */
-const accesses = ["public", "package", "protected", "private"]
+const accessRegex = /^(public|package|protected|private)$/i
 
 /** 
- * Array of available scope types, see following links for more information
- * on individual scopes:
+ * Regex matching allowable scope types with case insensitive flag, see 
+ * following links for more information on individual scopes:
  *      - {@link https://jsdoc.app/tags-global.html global}
  *      - {@link https://jsdoc.app/tags-instance.html instance}
  *      - {@link https://jsdoc.app/tags-static.html static}
  *      - {@link https://jsdoc.app/tags-inner.html inner}
  * 
  * @global
- * @type {string[]}
+ * @type {RegExp}
  */
-const scopes = ["global", "instance", "static", "inner"]
+const scopeRegex = /^(global|instance|static|inner)$/i
 
 /**
  * Triggered by jsdoc on the "onTagged" event, *directly* modifies the passed 
@@ -45,6 +50,11 @@ const scopes = ["global", "instance", "static", "inner"]
  * scoped and access specified function as specified by the tag values. See
  * {@link https://jsdoc.app/about-plugins.html here} for more information on
  * jsdoc plugins and plugin events.
+ * 
+ * Regex matchers for access and scope values are case insensitive in order to
+ * permit any case inside a funky tag in order to be in keeping wih existing 
+ * vanilla access tag as defined 
+ * {@link https://github.com/jsdoc/jsdoc/blob/main/packages/jsdoc-tag/lib/definitions/core.js#L40 here}.
  * 
  * Default scope is considered to be "instance" as opposed to "global" since
  * a function defined in global scope (i.e. without a file "module" or
@@ -68,8 +78,8 @@ const onTagged = (doclet, tag) => {
     // set access and scope to default values if not one of allowable scope or
     // access enum strings as defined by jsdoc schema, see jsdoc schema 
     // definition here <https://github.com/jsdoc/jsdoc/blob/main/packages/jsdoc-doclet/lib/schema.js>
-    access = accesses.includes(access) ? access : accesses[0]
-    scope = scopes.includes(scope) ? scope : scopes[1]
+    access = accessRegex.test(access) ? access.toLowerCase() : "public"
+    scope = scopeRegex.test(scope) ? scope.toLowerCase() : "instance"
     Object.assign(doclet, { kind: "function", access, scope })
 }
 

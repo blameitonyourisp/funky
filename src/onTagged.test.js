@@ -50,11 +50,19 @@ describe("onTagged", () => {
     })
 
     // test an overloaded jsdoc type object with a third string 
-    // "@funky {private|inner|overloaded}"
+    // "@funky {package|static|overloaded}"
     test("overloaded", () => {
         let doclet = {}
         const [access, scope] = ["package", "static"]
         onTagged(doclet, getTag(access, scope, "overload"))
+        expect(doclet).toEqual(getDoclet(access, scope))
+    })
+
+    // test jsdoc type object with mixed cases "@funky {PUBLIC|sTatIC}"
+    test("mixed case", () => {
+        let doclet = {}
+        const [access, scope] = ["public", "static"]
+        onTagged(doclet, getTag("PUBLIC", "sTatIC"))
         expect(doclet).toEqual(getDoclet(access, scope))
     })
 
@@ -66,7 +74,7 @@ describe("onTagged", () => {
         expect(doclet).toEqual(getDoclet(access, scope))
     })
 
-    // test invalid access string "@funky {public|instance}"
+    // test invalid access string "@funky {invalid|instance}"
     test("invalid access", () => {
         let doclet = {}
         const [access, scope] = [defaultAccess, defaultScope]
@@ -74,7 +82,7 @@ describe("onTagged", () => {
         expect(doclet).toEqual(getDoclet(access, scope))
     })
 
-    // test invalid scope string "@funky {public|instance}"
+    // test invalid scope string "@funky {public|invalid}"
     test("invalid scope", () => {
         let doclet = {}
         const [access, scope] = [defaultAccess, defaultScope]

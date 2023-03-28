@@ -120,6 +120,23 @@ Fortunately the default `instance` scope does interfere with methods defined wit
  */
 ```
 
+#### Mixed Cases
+
+Funky uses case insensitive regex expressions as is used by the vanilla jsdoc `@access` tag in order to validate `access` and `scope` values (see [jsdoc source](https://github.com/jsdoc/jsdoc/blob/main/packages/jsdoc-tag/lib/definitions/core.js#L40) for `@access` tag). This means that any mix of cases can be used in a `@funky` tag.
+
+```javascript
+/** 
+ * Default access and scope values which are assumed if one or both are missing
+ * You may use any combination in funky tags, so the following tags would all
+ * evaluate to the same jsdoc doclet output.
+ *
+ * @funky {private|inner}
+ * @funky {PRIVATE|inner}
+ * @funky {private|INNER}
+ * @funky {pRiVate|InNeR}
+ */
+```
+
 #### Aliases
 
 Funky uses `@funky` as the main tag for jsdoc, chosen both since it is short and relatively adjacent to the existing `@function` tag. However obviously `@funky` is not an explicit or meaningful tag name. For this reason `@scopedfunction` and `@scopedfunc` are provided as aliases to `@funky`. All lowercase is used for all aliases in order to stay in keeping with other existing vanilla jsdoc tags such as `@typedef` and `@memberof`.

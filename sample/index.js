@@ -16,17 +16,17 @@ const globalFuncB = () => {}
 
 /**
  * This function has "protected" access and "inner" scope with an overloaded
- * type string, defined with a funky tag in global scope.
+ * type string, defined with a funky tag in uppercase in global scope.
  * 
- * @funky {protected|inner|overloaded}
+ * @funky {PROTECTED|inner|overloaded}
  */
 const globalFuncC = () => {}
 
 /**
- * This function has "public" access only, defined with a funky tag in global
- * scope.
+ * This function has "public" access only, defined with a funky tag in
+ * uppercase in global scope.
  * 
- * @funky {public}
+ * @funky {PUBLIC}
  */
 const globalFuncD = () => {}
 
