@@ -11,6 +11,8 @@ A jsdoc plugin for quickly creating scoped and access tagged functions.
   - [Defaults](#defaults)
   - [Aliases](#aliases)
 
+- [Documentation](#documentation)
+- [Testing](#testing)
 - [Roadmap](#roadmap)
 - [License](#license)
 
@@ -38,8 +40,6 @@ Funky is a dead simple jsdoc plugin which introduces the @funky plugin (and expl
  */
 ```
 
-
-
 ## Installation
 
 If you are not already using jsdoc in your project(s) then go ahead and checkout the [github repository for jsdoc](https://github.com/jsdoc/jsdoc), otherwise continue with installing this plugin in a package that already has jsdoc installed and configured.
@@ -59,9 +59,9 @@ As with any plugin, you must also point jsdoc to the funky repository in the nod
 }
 ```
 
-
-
 ## Usage
+
+Funky syntax is as simple as `@funky {<access>|<scope>}` nothing more, nothing less.
 
 #### Standard
 
@@ -99,8 +99,6 @@ Fortunately the default `instance` scope does interfere with methods defined wit
  */
 ```
 
-
-
 #### Aliases
 
 Funky uses `@funky` as the main tag for jsdoc, chosen both since it is short and relatively adjacent to the existing `@function` tag. However obviously `@funky` is not an explicit or meaningful tag name. For this reason `@scopedfunction` and `@scopedfunc` are provided as aliases to `@funky`. All lowercase is used for all aliases in order to stay in keeping with other existing vanilla jsdoc tags such as `@typedef` and `@memberof`.
@@ -115,7 +113,30 @@ Funky uses `@funky` as the main tag for jsdoc, chosen both since it is short and
  */
 ```
 
+## Documentation
 
+Funky is about as simple as a repository can be; there are no explicit author-generated documentation files other than this README file. For auto-generated jsdoc documentation, please clone the repository and use the appropriate npm script(s) and view the docs in the browser on [localhost](http://localhost:8080).
+
+```bash
+# auto-generate jsdoc documentation
+git clone https://github.com/blameitonyourisp/funky.git
+cd funky
+npm install
+npm serve-docs # will also automatically run script to generate docs and serve docs on http://localhost:8080
+```
+
+## Testing
+
+Funky uses Jest for testing, and a sample directory containing jsdoc comments and empty functions as methods for testing generated output in the browser, please clone the repository and use the appropriate npm script(s) to run the available tests or view sample output in the browser on [localhost](http://localhost:8080).
+
+```bash
+# run tests
+git clone https://github.com/blameitonyourisp/funky.git
+cd funky
+npm install
+npm test # run available tests
+npm serve-docs-sample # serves sample generated docs on http://localhost:8080
+```
 
 ## Roadmap
 
