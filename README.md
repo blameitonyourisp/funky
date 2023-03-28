@@ -19,7 +19,7 @@ A jsdoc plugin for quickly creating scoped and access tagged functions.
 
 ## Description
 
-Funky is a dead simple jsdoc plugin which introduces the @funky plugin (and explicit aliases) which is designed to set the kind, access, and scope properties of jsdoc doclets.
+Funky is a dead simple jsdoc plugin which introduces the @funky tag (and explicit aliases) which is designed to set the kind, access, and scope properties of jsdoc doclets.
 
 ```javascript
 /**
@@ -49,7 +49,7 @@ If you are not already using jsdoc in your project(s) then go ahead and checkout
 npm install --save-dev @13ms/funky
 ```
 
-As with any plugin, you must also point jsdoc to the funky repository in the node_modules folder. This must be done using a jsdoc config file (as of creating this plugin, there is no way to use plugins through the jsdoc cli). If you are not currently use a config file with jsdoc, please refer to [this page](https://jsdoc.app/about-configuring-jsdoc.html) for information on writing a config file, otherwise ensure that your jsdoc config file includes funky as a plugin (please note that the following is only a fragment of a config file).
+As with any plugin, you must also point jsdoc to the funky repository in the node_modules folder. This must be done using a jsdoc config file (as of creating this plugin, there is no way to use plugins through the jsdoc cli). If you are not currently using a config file with jsdoc, please refer to [this page](https://jsdoc.app/about-configuring-jsdoc.html) for information on writing a config file, otherwise ensure that your jsdoc config file includes funky as a plugin (please note that the following is only a fragment of a config file).
 
 ```json
 {
@@ -65,13 +65,28 @@ Funky syntax is as simple as `@funky {<access>|<scope>}` nothing more, nothing l
 
 #### Standard
 
-`@funky` tags follow a simple syntax where the required access and scope values are passed as types in the type field of the `@funky` tag. `@funky` tags ignore any name or description values passed according to jsdoc syntax rules, how `@funky` tag *must* be passed a type field. If no type field is provided, jsdoc will throw an error when generating generation. The syntax for a `@funky` tag is `@funky {<access>|<scope>}` where the `<access>` and `<scope>` are passed in the tag type field, and are the `access` and `scope` values which should be applied to the doclet.
+`@funky` tags follow a simple syntax where the required access and scope values are passed as types in the type field of the `@funky` tag. `@funky` tags ignore any name or description values passed according to jsdoc syntax rules, however a `@funky` tag *must* be passed a type field. If no type field is provided, jsdoc will throw an error when generating documentation. The syntax for a `@funky` tag is `@funky {<access>|<scope>}` where the `<access>` and `<scope>` are passed in the tag type field, and are the `access` and `scope` values which should be applied to the doclet.
+
+The available `access` types are as follows `["public", "package", "protected", "private"]`, please [see here](https://jsdoc.app/tags-access.html) for more information about the jsdoc `@access` tag and the following links for information about explicit `access` tags:
+
+- [public](https://jsdoc.app/tags-public.html) for `@public` tag
+- [package](https://jsdoc.app/tags-package.html) for `@package` tag
+- [protected](https://jsdoc.app/tags-protected.html) for `@protected` tag
+- [private](https://jsdoc.app/tags-private.html) for `@private` tag
+
+The available `scope` types are as follows `["global", "instance", "static", "inner"]`, please see the following links for information about explicit `scope` tags (as of writing this plugin no general `@scope` tag is available in vanilla jsdoc):
+
+- [global](https://jsdoc.app/tags-global.html) for `@global` tag
+- [instance](https://jsdoc.app/tags-instance.html) for `@instance` tag
+- [static](https://jsdoc.app/tags-static.html) for `@static` tag
+- [inner ](https://jsdoc.app/tags-inner.html)for `@inner` tag
 
 ```javascript
 /** 
  * Funky tags take only type value(s); access first then scope. Any name and or
  * description values provided in jsdoc syntax will be ignored. A funky tag
- * alone with no type field will cause jsdoc to throw an error.
+ * alone with no type field will cause jsdoc to throw an error. All the following
+ * tags would produce the same doclet output.
  *
  * @funky {<access>|<scope>}
  * @funky {<access>|<scope>} <name>
@@ -140,7 +155,7 @@ npm serve-docs-sample # serves sample generated docs on http://localhost:8080
 
 ## Roadmap
 
-Funky is a very simple, feature complete, jsdoc plugin. There are no plans to add to or change this repository in the long term. If you find a bug or think there is a specific feature that should be added or changed, please file a bug report or feature using this repository's issue tracker.
+Funky is a very simple, feature complete, jsdoc plugin. There are no plans to add to or change this repository in the long term. If you find a bug or think there is a specific feature that should be added or changed, please file a bug report or feature request using this repository's issue tracker.
 
 ## License
 
