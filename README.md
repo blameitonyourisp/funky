@@ -2,6 +2,8 @@
 
 A jsdoc plugin for quickly creating scoped and access tagged functions.
 
+![](https://img.shields.io/github/license/blameitonyourisp/funky?style=for-the-badge) ![](https://img.shields.io/bundlephobia/minzip/@13ms/funky?style=for-the-badge) ![](https://img.shields.io/github/languages/code-size/blameitonyourisp/funky?style=for-the-badge)
+
 ### Table of Contents
 
 - [Description](#description)
