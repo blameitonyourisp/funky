@@ -187,21 +187,15 @@ npm serve-docs-sample # serves sample generated docs on http://localhost:8080
 
 Please see below for a table of scripts declared in the package.json file. All scripts are listed in alphabetical order, not listed in order of any significance or importance. As with any npm script, they may be run from anywhere in the repository using the command `npm run <script-name>`. Any relevant bash scripts, node scripts etc. which are used independently by one of the following npm scripts may be found in the scripts directory in the root of the repository.
 
-<style>
-    table th:nth-of-type(2) {
-    	max-width: 60ch;
-	}
-</style>
-
-| Name                | Usage                                                        |
-| :------------------ | :----------------------------------------------------------- |
-| `build`             | Builds package, and puts bundled, minified result in dist directory |
-| `docs`              | Builds auto-generated docs using jsdoc, and puts generated files in jsdoc directory |
-| `docs-sample`       | Builds auto-generated docs for the sample code using jsdoc, and puts generated files in jsdoc-sample directory |
-| `serve-docs`        | Builds and serves auto-generated on localhost                |
-| `serve-docs-sample` | Builds and serves auto-generated for the sample code on localhost |
-| `test`              | Runs Jest test suite                                         |
-| `tokei`             | Counts approximate lines of code written by the author, and generates a json endpoint for a line count [shields](https://shields.io/) badge. Please note that this script relies on `tokei`, a CLI application written in Rust. If `tokei` is not installed on the system, then this script will not run. |
+| Name | Usage |
+| :------------------------ | :----------------------------------------------------------- |
+| `build`                   | Builds package, and puts bundled, minified result in dist directory |
+| `docs`                    | Builds auto-generated docs using jsdoc, and puts generated files in jsdoc directory |
+| `docs-sample`             | Builds auto-generated docs for the sample code using jsdoc, and puts generated files in jsdoc-sample directory |
+| `serve-docs`              | Builds and serves auto-generated on localhost                |
+| `serve-docs-sample`       | Builds and serves auto-generated for the sample code on localhost |
+| `test`                    | Runs Jest test suite                                         |
+| `tokei`                   | Counts approximate lines of code written by the author, and generates a json endpoint for a line count [shields](https://shields.io/) badge. Please note that this script relies on `tokei`, a CLI application written in Rust. If `tokei` is not installed on the system, then this script will not run. |
 
 ## Roadmap
 
