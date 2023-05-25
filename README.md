@@ -187,7 +187,7 @@ npm serve-docs-sample # serves sample generated docs on http://localhost:8080
 
 Please see below for a table of scripts declared in the package.json file. All scripts are listed in alphabetical order, not listed in order of any significance or importance. As with any npm script, they may be run from anywhere in the repository using the command `npm run <script-name>`. Any relevant bash scripts, node scripts etc. which are used independently by one of the following npm scripts may be found in the scripts directory in the root of the repository.
 
-| &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Name&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Usage |
+| Name&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Usage |
 | :------------------------ | :----------------------------------------------------------- |
 | `build`                   | Builds package, and puts bundled, minified result in dist directory |
 | `docs`                    | Builds auto-generated docs using jsdoc, and puts generated files in jsdoc directory |
