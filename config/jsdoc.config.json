@@ -9,6 +9,7 @@
         "destination": "./jsdoc/",
         "private": true,
         "recurse": true,
+        "readme": "./README.md",
         "template": "node_modules/docdash",
         "sort": true
     },
