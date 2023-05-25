@@ -1,11 +1,12 @@
 {
     "name": "@13ms/funky",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "description": "A jsdoc plugin for quickly creating scoped and access tagged functions",
     "type": "module",
     "main": "dist/bundle.min.cjs",
     "scripts": {
-        "build": "rollup --config ./config/rollup.config.js",
+        "build": "jest && node scripts/tokei.js && rollup --config ./config/rollup.config.js",
+        "build-dev": "rollup --config ./config/rollup.config.js",
         "docs": "jsdoc -c ./config/jsdoc.config.json",
         "docs-sample": "jsdoc -c ./config/jsdoc-sample.config.json",
         "serve-docs": "npm run docs && http-server ./jsdoc",

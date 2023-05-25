@@ -48,5 +48,5 @@ exec("tokei --output json", (error, stdout, stderr) => {
     
     // save endpoint to dist dir and log total line count
     fs.writeFileSync("./dist/tokei.json", JSON.stringify(data))
-    return console.log(`lines of code: ${lineCount}`)
+    return console.log(`\nlines of code: ${lineCount}`)
 })

@@ -189,13 +189,16 @@ Please see below for a table of scripts declared in the package.json file. All s
 
 | Name&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | Usage |
 | :------------------------ | :----------------------------------------------------------- |
-| `build`                   | Builds package, and puts bundled, minified result in dist directory |
-| `docs`                    | Builds auto-generated docs using jsdoc, and puts generated files in jsdoc directory |
-| `docs-sample`             | Builds auto-generated docs for the sample code using jsdoc, and puts generated files in jsdoc-sample directory |
-| `serve-docs`              | Builds and serves auto-generated on localhost                |
-| `serve-docs-sample`  | Builds and serves auto-generated for the sample code on localhost |
-| `test`                    | Runs Jest test suite                                         |
-| `tokei`                   | Counts approximate lines of code written by the author, and generates a json endpoint for a line count [shields](https://shields.io/) badge. Please note that this script relies on `tokei`, a CLI application written in Rust. If `tokei` is not installed on the system, then this script will not run. |
+| `build` | Runs Jest test suite, counts lines of code, and builds package (should the test suite fail, the script will not continue to build the package). |
+| `build-dev`               | Builds package, and puts bundled, minified result in dist directory. |
+| `docs`                    | Builds auto-generated docs using jsdoc, and puts generated files in jsdoc directory. |
+| `docs-sample`             | Builds auto-generated docs for the sample code using jsdoc, and puts generated files in jsdoc-sample directory. |
+| `serve-docs`              | Builds and serves auto-generated on localhost.               |
+| `serve-docs-sample`  | Builds and serves auto-generated for the sample code on localhost. |
+| `test`                    | Runs Jest test suite.                                        |
+| `tokei` [^1]             | Counts approximate lines of code written by the author, and generates a json endpoint for a line count [shields](https://shields.io/) badge. Please note that this script relies on `tokei`, a CLI application written in Rust. If `tokei` is not installed on the system, then this script will not run. |
+
+[^1]: At the time of writing, the tokei endpoint for dynamic badges/shields is intermittent and unreliable, showing a 502 bad gateway error. This error also prevents the [shields](https://shields.io/category/size) lines of code badge from rendering correctly, causing all repos to show as having 0 lines of code. The format for the tokei badge URL may be found [here](https://github.com/XAMPPRocky/tokei#badges). To circumvent this, lines of code are being counted "manually" using the tokei [rust CLI](https://github.com/XAMPPRocky/tokei) and a json endpoint to generate the badge. As such the lines of code badge may be out of sync with the latest commit, although given that this is a "just for fun" metric, it is not of importance.
 
 ## Roadmap
 
