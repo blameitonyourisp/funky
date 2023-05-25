@@ -5,12 +5,13 @@
     "type": "module",
     "main": "dist/bundle.min.cjs",
     "scripts": {
-        "test": "jest",
         "build": "rollup --config ./config/rollup.config.js",
         "docs": "jsdoc -c ./config/jsdoc.config.json",
         "docs-sample": "jsdoc -c ./config/jsdoc-sample.config.json",
         "serve-docs": "npm run docs && http-server ./jsdoc",
-        "serve-docs-sample": "npm run docs-sample && http-server ./jsdoc-sample"
+        "serve-docs-sample": "npm run docs-sample && http-server ./jsdoc-sample",
+        "test": "jest",
+        "tokei": "node scripts/tokei.js"
     },
     "repository": {
         "type": "git",
