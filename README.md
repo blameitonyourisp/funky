@@ -15,8 +15,9 @@ A jsdoc plugin for quickly creating scoped and access tagged functions.
 - [Usage](#usage)
   - [Standard](#standard)
   - [Defaults](#defaults)
+  - [Mixed Cases](#mixed-cases)
   - [Aliases](#aliases)
-
+  
 - [Documentation](#documentation)
 - [Testing](#testing)
 - [Scripts](#scripts)
