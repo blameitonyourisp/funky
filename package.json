@@ -13,7 +13,7 @@
         "serve-docs-sample": "npm run docs-sample && http-server -o ./jsdoc-sample",
         "test": "jest",
         "tokei": "node scripts/tokei.js",
-        "watch-docs-sample": "nodemon --watch ./src --exec 'npm run serve-docs-sample'"
+        "watch-docs-sample": "nodemon --watch ./src --exec 'npm run build-dev && npm run serve-docs-sample'"
     },
     "repository": {
         "type": "git",
