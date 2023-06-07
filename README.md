@@ -161,19 +161,19 @@ Funky uses `@funky` as the main tag for jsdoc, chosen both since it is short and
 
 ## Documentation
 
-Funky is about as simple as a repository can be; there are no explicit author-generated documentation files other than this README file. For auto-generated jsdoc documentation, please clone the repository and use the appropriate npm script(s) and view the docs in the browser on [localhost](http://localhost:8080).
+Funky is about as simple as a repository can be; there are no explicit author-generated documentation files other than this README file. For auto-generated jsdoc documentation, please clone the repository and use the appropriate npm script(s) and view the docs in the browser on [localhost](http://localhost:8080/jsdoc).
 
 ```bash
 # auto-generate jsdoc documentation
 git clone https://github.com/blameitonyourisp/funky.git
 cd funky
 npm install
-npm serve-docs # will also automatically run script to generate docs and serve docs on http://localhost:8080
+npm serve-docs # will also automatically run script to generate docs and serve docs on http://localhost:8080/jsdoc
 ```
 
 ## Testing
 
-Funky uses Jest for testing, and a sample directory containing jsdoc comments and empty functions as methods for testing generated output in the browser, please clone the repository and use the appropriate npm script(s) to run the available tests or view sample output in the browser on [localhost](http://localhost:8080).
+Funky uses Jest for testing, and a sample directory containing jsdoc comments and empty functions as methods for testing generated output in the browser, please clone the repository and use the appropriate npm script(s) to run the available tests or view sample output in the browser on [localhost](http://localhost:8080/jsdoc-sample).
 
 ```bash
 # run tests
@@ -181,7 +181,7 @@ git clone https://github.com/blameitonyourisp/funky.git
 cd funky
 npm install
 npm test # run available tests
-npm serve-docs-sample # serves sample generated docs on http://localhost:8080
+npm serve-docs-sample # serves sample generated docs on http://localhost:8080/jsdoc-sample
 ```
 
 ## Scripts
@@ -194,11 +194,12 @@ Please see below for a table of scripts declared in the package.json file. All s
 | `build-dev`               | Builds package, and puts bundled, minified result in dist directory. |
 | `docs`                    | Builds auto-generated docs using jsdoc, and puts generated files in jsdoc directory. |
 | `docs-sample`             | Builds auto-generated docs for the sample code using jsdoc, and puts generated files in jsdoc-sample directory. |
-| `serve-docs`              | Builds and serves auto-generated on localhost.               |
-| `serve-docs-sample`  | Builds and serves auto-generated for the sample code on localhost. |
+| `serve-docs`              | Builds and serves auto-generated on  [localhost](http://localhost:8080/jsdoc). |
+| `serve-docs-sample`  | Builds and serves auto-generated for the sample code on [localhost](http://localhost:8080/jsdoc-sample). |
 | `test`                    | Runs Jest test suite.                                        |
 | `tokei` [^1]             | Counts approximate lines of code written by the author, and generates a json endpoint for a line count [shields](https://shields.io/) badge. Please note that this script relies on `tokei`, a CLI application written in Rust. If `tokei` is not installed on the system, then this script will not run. |
-| `watch-docs-sample` | Serves sample docs on localhost and watches src directory using [nodemon](https://www.npmjs.com/package/nodemon), and reloads server upon changes. |
+| `watch-docs` | Serves docs on  [localhost](http://localhost:8080/jsdoc) and watches src directory using [nodemon](https://www.npmjs.com/package/nodemon), and reloads server upon changes. |
+| `watch-docs-sample` | Serves sample docs on  [localhost](http://localhost:8080/jsdoc-sample) and watches src directory using [nodemon](https://www.npmjs.com/package/nodemon), and reloads server upon changes. |
 
 [^1]: At the time of writing, the tokei endpoint for dynamic badges/shields is intermittent and unreliable, showing a 502 bad gateway error. This error also prevents the [shields](https://shields.io/category/size) lines of code badge from rendering correctly, causing all repos to show as having 0 lines of code. The format for the tokei badge URL may be found [here](https://github.com/XAMPPRocky/tokei#badges). To circumvent this, lines of code are being counted "manually" using the tokei [rust CLI](https://github.com/XAMPPRocky/tokei) and a json endpoint to generate the badge. As such the lines of code badge may be out of sync with the latest commit, although given that this is a "just for fun" metric, it is not of importance.
 
