@@ -31,7 +31,8 @@ const defineTags = dictionary => {
         mustNotHaveValue: false
     }
     // define named tag with long name aliases, same imported onTagged function
-    // for each alias
+    // for each alias - synonyms could also be defined following syntax defined
+    // here https://jsdoc.app/about-plugins.html
     dictionary.defineTag("funky", { ...options, onTagged })
     dictionary.defineTag("scopedfunction", { ...options, onTagged })
     dictionary.defineTag("scopedfunc", { ...options, onTagged })
