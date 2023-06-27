@@ -4,13 +4,13 @@
 // of which may be found in the LICENSE.md file in the root of this repository.  
 // 
 // For a template copy of the license see one of the following 3rd party sites:
-//      * <https://opensource.org/licenses/MIT>
-//      * <https://choosealicense.com/licenses/mit>
-//      * <https://spdx.org/licenses/MIT>
+//      - <https://opensource.org/licenses/MIT>
+//      - <https://choosealicense.com/licenses/mit>
+//      - <https://spdx.org/licenses/MIT>
 
 /**
  * @file Defines onTagged function for custom scoped function tag
- * @module tag
+ * @module plugin
  * @author James Reid
  */
 
@@ -19,12 +19,12 @@
 // @body
 /** 
  * Regex matching allowable access types with case insensitive flag, see 
- * {@link https://jsdoc.app/tags-access.html here} for more information, and the
- * following links for more information on individual scopes:
- *      - {@link https://jsdoc.app/tags-public.html public}
- *      - {@link https://jsdoc.app/tags-package.html package}
- *      - {@link https://jsdoc.app/tags-protected.html protected}
- *      - {@link https://jsdoc.app/tags-private.html private}
+ * [here]{@link https://jsdoc.app/tags-access.html} for more information, and 
+ * the following links for more information on individual scopes:
+ *  - [public]{@link https://jsdoc.app/tags-public.html}
+ *  - [package]{@link https://jsdoc.app/tags-package.html}
+ *  - [protected]{@link https://jsdoc.app/tags-protected.html}
+ *  - [private]{@link https://jsdoc.app/tags-private.html}
  * 
  * @global
  * @type {RegExp}
@@ -34,10 +34,10 @@ const accessRegex = /^(public|package|protected|private)$/i
 /** 
  * Regex matching allowable scope types with case insensitive flag, see 
  * following links for more information on individual scopes:
- *      - {@link https://jsdoc.app/tags-global.html global}
- *      - {@link https://jsdoc.app/tags-instance.html instance}
- *      - {@link https://jsdoc.app/tags-static.html static}
- *      - {@link https://jsdoc.app/tags-inner.html inner}
+ *  - [global]{@link https://jsdoc.app/tags-global.html}
+ *  - [instance]{@link https://jsdoc.app/tags-instance.html}
+ *  - [static]{@link https://jsdoc.app/tags-static.html}
+ *  - [inner]{@link https://jsdoc.app/tags-inner.html}
  * 
  * @global
  * @type {RegExp}
@@ -48,13 +48,13 @@ const scopeRegex = /^(global|instance|static|inner)$/i
  * Triggered by jsdoc on the "onTagged" event, *directly* modifies the passed 
  * instance of doclet to add required fields to turn the doclet into a 
  * scoped and access specified function as specified by the tag values. See
- * {@link https://jsdoc.app/about-plugins.html here} for more information on
+ * [here]{@link https://jsdoc.app/about-plugins.html} for more information on
  * jsdoc plugins and plugin events.
  * 
  * Regex matchers for access and scope values are case insensitive in order to
  * permit any case inside a funky tag in order to be in keeping wih existing 
  * vanilla access tag as defined 
- * {@link https://github.com/jsdoc/jsdoc/blob/main/packages/jsdoc-tag/lib/definitions/core.js#L40 here}.
+ * [here]{@link https://github.com/jsdoc/jsdoc/blob/main/packages/jsdoc-tag/lib/definitions/core.js#L40}.
  * 
  * Default scope is considered to be "instance" as opposed to "global" since
  * a function defined in global scope (i.e. without a file "module" or

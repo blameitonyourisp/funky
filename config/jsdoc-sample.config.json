@@ -7,8 +7,13 @@
         "sectionOrder": [
             "Tutorials",
             "Classes",
+            "Namespaces",
             "Modules",
-            "Externals"
+            "Externals",
+            "Events",
+            "Mixins",
+            "Interfaces",
+            "Global"
         ]
     },
     "opts": {
@@ -16,15 +21,15 @@
         "private": true,
         "recurse": true,
         "readme": "sample/README.md",
-        "template": "node_modules/docdash",
-        "sort": true
+        "template": "node_modules/docdash"
     },
     "plugins": [ 
         "plugins/markdown",
         "."
     ],
     "markdown": {
-        "hardwrap": true
+        "hardwrap": false,
+        "idInHeadings": true
     },
     "recurseDepth": 10,
     "source": {
@@ -38,6 +43,13 @@
     },
     "templates": {
         "cleverLinks": false,
-        "monospaceLinks": false
+        "monospaceLinks": false,
+        "default": {
+            "staticFiles": {
+                "include": [
+                    "assets/favicon.ico"
+                ]
+            }
+        }
     }
 }
