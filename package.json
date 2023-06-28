@@ -1,6 +1,6 @@
 {
     "name": "@13ms/funky",
-    "version": "1.1.7",
+    "version": "1.0.0",
     "description": "A jsdoc plugin for quickly creating scoped and access tagged functions",
     "type": "module",
     "main": "dist/bundle.min.cjs",
